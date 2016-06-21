@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="io.fourfinanceit.activiti" xmlns:modeler="http://activiti.com/modeler" modeler:version="1.0ev" modeler:exportDateTime="20160606215851" modeler:modelId="981313" modeler:modelVersion="1" modeler:modelLastUpdated="1465246725751">
+  <process id="camel_process" name="The One Task Process" isExecutable="true">
+    <startEvent id="theStart"/>
+    <serviceTask id="javaService" name="Logging Activity" activiti:delegateExpression="${logActivity}"/>
+    <endEvent id="theEnd"/>
+    <sequenceFlow id="sid-7E7BC2D7-57CB-4286-A0E5-98F8F7036928" sourceRef="theStart" targetRef="javaService"/>
+    <serviceTask id="CamelTask" name="Camel Task" activiti:type="camel">
+      <extensionElements>
+        <activiti:field name="camelContext">
+          <activiti:string><![CDATA[camelContext]]></activiti:string>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="sid-AA1A5E45-A5D0-421A-8595-15493B8D66FA" sourceRef="javaService" targetRef="CamelTask"/>
+    <sequenceFlow id="sid-46B832A6-B5F0-4940-AE14-0FC8E85B79F5" sourceRef="CamelTask" targetRef="theEnd"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_oneTaskProcess">
+    <bpmndi:BPMNPlane bpmnElement="oneTaskProcess" id="BPMNPlane_oneTaskProcess">
+      <bpmndi:BPMNShape bpmnElement="theStart" id="BPMNShape_theStart">
+        <omgdc:Bounds height="30.0" width="30.0" x="240.0" y="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="javaService" id="BPMNShape_javaService">
+        <omgdc:Bounds height="60.0" width="100.0" x="205.0" y="120.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="theEnd" id="BPMNShape_theEnd">
+        <omgdc:Bounds height="28.0" width="27.99999999999997" x="241.00000000000003" y="480.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="CamelTask" id="BPMNShape_CamelTask">
+        <omgdc:Bounds height="80.0" width="100.36219727999998" x="204.81890135999998" y="274.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-AA1A5E45-A5D0-421A-8595-15493B8D66FA" id="BPMNEdge_sid-AA1A5E45-A5D0-421A-8595-15493B8D66FA">
+        <omgdi:waypoint x="255.0" y="180.0"/>
+        <omgdi:waypoint x="255.0" y="274.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-7E7BC2D7-57CB-4286-A0E5-98F8F7036928" id="BPMNEdge_sid-7E7BC2D7-57CB-4286-A0E5-98F8F7036928">
+        <omgdi:waypoint x="255.0" y="60.0"/>
+        <omgdi:waypoint x="255.0" y="120.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-46B832A6-B5F0-4940-AE14-0FC8E85B79F5" id="BPMNEdge_sid-46B832A6-B5F0-4940-AE14-0FC8E85B79F5">
+        <omgdi:waypoint x="255.14085449777775" y="354.0"/>
+        <omgdi:waypoint x="255.01408544264882" y="480.0000070857052"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
