@@ -15,7 +15,7 @@ security:
 
 spring:
   application:
-     name: activiti-web
+     name: activiti
   datasource:
      driver-class-name: org.postgresql.Driver
      url: jdbc:postgresql://localhost:5432/activiti
@@ -24,6 +24,9 @@ spring:
      maximum-pool-size: 50
      connection-timeout: 10000
      idle-timeout: 30000
+  jpa:
+     hibernate:
+        ddl-auto: create-drop
 
   cloud.config.enabled: false
 

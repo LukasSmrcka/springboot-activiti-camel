@@ -96,6 +96,7 @@ dependencies {
 // Spring
 dependencies {
 
+    compile "org.springframework.cloud:spring-cloud-starter-config:1.1.2.RELEASE"
     compile "org.activiti:spring-boot-starter-basic:5.17.0"
     compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
     compile "org.activiti:activiti-camel:5.17.0"
@@ -103,6 +104,8 @@ dependencies {
     compile "org.apache.camel:camel-jms:2.15.0"
     compile "org.apache.camel:camel-spring-javaconfig:2.15.0"
     compile "org.apache.activemq:activemq-broker"
+    compile "org.apache.activemq:activemq-jdbc-store"
+    compile "org.apache.activemq:activemq-kahadb-store"
     compile "org.apache.activemq:activemq-camel"
     compile "org.springframework:spring-jms:$springVersion"
 
@@ -121,6 +124,7 @@ dependencies {
     //compile "org.springframework:spring-aspects:$springVersion"
     //compile "org.springframework:spring-beans:$springVersion"
     compile "org.springframework:spring-context-support:$springVersion"
+    //compile "org.springframework:spring-tx:$springVersion"
     //compile "org.springframework:spring-context:$springVersion"
     //compile "org.springframework:spring-core:$springVersion"
     //compile "org.springframework:spring-expression:$springVersion"

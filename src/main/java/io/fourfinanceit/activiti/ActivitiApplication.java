@@ -11,11 +11,13 @@ import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan
 @EnableJms
 @EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
+
 //@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class , SecurityFilterAutoConfiguration.class,org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class , FallbackWebSecurityAutoConfiguration.class})
 public class ActivitiApplication extends WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter{
 
