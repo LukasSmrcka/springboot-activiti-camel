@@ -1,5 +1,8 @@
 spring.http.converters.preferred-json-mapper: gson
-server.port: 8080
+
+server:
+  # This port will be used when config server is down, othervise overrided
+  port: 8080
 
 management:
   port: 8081
@@ -27,8 +30,6 @@ spring:
   jpa:
      hibernate:
         ddl-auto: create-drop
-
-  cloud.config.enabled: false
 
 
 logging:
