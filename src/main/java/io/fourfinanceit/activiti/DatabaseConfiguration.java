@@ -42,38 +42,22 @@ public class DatabaseConfiguration {
   //      return dataSource;
   //  }
 
-   // @Bean
-   // @ConfigurationProperties(DataSourceProperties.PREFIX)
-   // public DataSource dataSource() {
-   //     HikariDataSource dataSource = (HikariDataSource) DataSourceBuilder
-   //             .create(this.properties.getClassLoader())
-   //             .type(HikariDataSource.class)
-   //             .driverClassName(this.properties.getDriverClassName())
-   //             .url(this.properties.getUrl())
-   //             .username(this.properties.getUsername())
-   //             .password(this.properties.getPassword())
-   //             .build();
-   //     TransactionAwareDataSourceProxy dataSourceProxy = new TransactionAwareDataSourceProxy(dataSource);
-//
-   //     return dataSourceProxy;
-   // }
-
     @Bean
     @ConfigurationProperties(DataSourceProperties.PREFIX)
     public DataSource dataSource() {
-        BasicDataSource dataSource = new MonitoredDatasource();
-        dataSource.setDriverClassName(this.properties.getDriverClassName());
-        dataSource.setUrl(this.properties.getUrl());
-        dataSource.setUsername(this.properties.getUsername());
-        dataSource.setPassword(this.properties.getPassword());
-        dataSource.setAccessToUnderlyingConnectionAllowed(true);
-
-
-
-        //dataSourceProxy.setReobtainTransactionalConnections();
-        //ThreadLocalConnectionsDatasource proxyDataSource = new ThreadLocalConnectionsDatasource(dataSource);
-        return dataSource;
+        HikariDataSource dataSource = (HikariDataSource) DataSourceBuilder
+                .create(this.properties.getClassLoader())
+                .type(HikariDataSource.class)
+                .driverClassName(this.properties.getDriverClassName())
+                .url(this.properties.getUrl())
+                .username(this.properties.getUsername())
+                .password(this.properties.getPassword())
+                .build();
+        TransactionAwareDataSourceProxy dataSourceProxy = new TransactionAwareDataSourceProxy(dataSource);
+       return dataSourceProxy;
     }
+
+
 
     //@Bean(destroyMethod = "close")
     //@ConfigurationProperties(DataSourceProperties.PREFIX)

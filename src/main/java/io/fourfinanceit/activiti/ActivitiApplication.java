@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan
-@EnableJms
+//@EnableJms
 @EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
 
 //@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class , SecurityFilterAutoConfiguration.class,org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class , FallbackWebSecurityAutoConfiguration.class})
