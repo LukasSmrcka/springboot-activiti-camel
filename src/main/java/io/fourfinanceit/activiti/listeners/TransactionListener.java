@@ -24,6 +24,8 @@ public class TransactionListener {
             System.out.println("Transaction active");
 
 
+
+
         }
         System.out.println("BEFORE_COMMIT");
         System.out.println("Received: " + event.getName());
