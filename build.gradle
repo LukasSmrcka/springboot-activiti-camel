@@ -72,79 +72,26 @@ configurations {
 
 }
 
-//project.gradle.projectsEvaluated {
-//    applicationDefaultJvmArgs = project.gradle.startParameter.systemPropertiesArgs.entrySet().collect{"-D${it.key}=${it.value}"}
-//}
-
-// Common
-dependencies {
-   // compile 'org.slf4j:jcl-over-slf4j:1.7.12'
-    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
-
-    //compile("org.apache.httpcomponents:httpclient:4.5.1") {
-//        force = true
-   // }
-    //compile("org.apache.httpcomponents:httpcore:4.4.3") {
-  //      force = true
-    //}
-   // compile "org.glassfish.jersey.connectors:jersey-apache-connector:$jerseyVersion"
-   // compile "org.glassfish.jersey.core:jersey-client:$jerseyVersion"
-   // compile "org.glassfish.jersey.media:jersey-media-multipart:$jerseyVersion"
-   // compile 'org.bitbucket.b_c:jose4j:0.4.4'
-}
-
-// Spring
 dependencies {
 
-    compile "org.springframework.cloud:spring-cloud-starter-config:1.1.2.RELEASE"
     compile "org.activiti:spring-boot-starter-basic:5.17.0"
     compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
-    compile "org.activiti:activiti-camel:5.17.0"
-    compile "org.apache.camel:camel-spring-boot:2.15.0"
-    compile "org.apache.camel:camel-jms:2.15.0"
-    compile "org.apache.camel:camel-spring-javaconfig:2.15.0"
-    compile "org.apache.activemq:activemq-broker"
-    compile "org.apache.activemq:activemq-jdbc-store"
-    compile "org.apache.activemq:activemq-kahadb-store"
-    compile "org.apache.activemq:activemq-camel"
     compile "org.springframework:spring-jms:$springVersion"
 
-    //compile"org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
     compile"org.springframework.boot:spring-boot-devtools:$springBootVersion"
     //compile "org.springframework.boot:spring-boot-starter-undertow:$springBootVersion"
-    //compile "org.springframework.boot:spring-boot-loader:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
     compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
-    //compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-security:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
-    //compile "org.springframework:spring-aop:$springVersion"
-    //compile "org.springframework:spring-aspects:$springVersion"
-    //compile "org.springframework:spring-beans:$springVersion"
     compile "org.springframework:spring-context-support:$springVersion"
-    //compile "org.springframework:spring-tx:$springVersion"
-    //compile "org.springframework:spring-context:$springVersion"
-    //compile "org.springframework:spring-core:$springVersion"
-    //compile "org.springframework:spring-expression:$springVersion"
-    //compile "org.springframework:spring-web:$springVersion"
-    //compile "org.springframework:spring-webmvc:$springVersion"
     compile "javax.servlet:javax.servlet-api:3.1.0"
 
     compile "com.zaxxer:HikariCP:2.4.6"
 
-
-
-    //compile "org.postgresql:postgresql:9.3-1100-jdbc41"
     compile "org.postgresql:postgresql:9.4.1208.jre7"
-  //  compile "de.codecentric:spring-boot-admin-starter-client:$springBootAdminVersion"
-
-    testCompile "junit:junit:4.12"
-
-    testCompile "org.spockframework:spock-core:$spockVersion"
-    testRuntime "org.spockframework:spock-spring:$spockVersion"
-    testCompile "org.springframework:spring-test:$springVersion"
 }
 
 

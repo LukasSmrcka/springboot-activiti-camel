@@ -1,7 +1,6 @@
 spring.http.converters.preferred-json-mapper: gson
 
 server:
-  # This port will be used when config server is down, othervise overrided
   port: 8080
 
 management:
@@ -13,9 +12,6 @@ management:
 security:
   basic:
     enabled: false
-
-
-
 spring:
   application:
      name: activiti

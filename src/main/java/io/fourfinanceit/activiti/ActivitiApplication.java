@@ -17,8 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan
 @EnableJms
 @EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class })
-
-//@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class , SecurityFilterAutoConfiguration.class,org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class , FallbackWebSecurityAutoConfiguration.class})
 public class ActivitiApplication extends WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter{
 
     public static void main(String... args) {
