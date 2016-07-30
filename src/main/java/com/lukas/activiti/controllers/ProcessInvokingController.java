@@ -18,13 +18,13 @@ public class ProcessInvokingController {
     public String greeting() {
 
 
-        System.out.println("-----------------------------");
+        System.out.println("-----------------------------------------------------------");
         System.out.println("Starting synchronous transactional run of ParallelProcess");
-        System.out.println("-----------------------------");
+        System.out.println("-----------------------------------------------------------");
         runtimeService.startProcessInstanceByKey("parallelProcess");
-        System.out.println("-----------------------------");
+        System.out.println("-----------------------------------------------------------");
         System.out.println("Finishing synchronous transactional run of ParallelProcess");
-        System.out.println("-----------------------------");
+        System.out.println("-----------------------------------------------------------");
 
         return "Process started";
     }
