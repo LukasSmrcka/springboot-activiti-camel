@@ -15,8 +15,7 @@ public class ProcessInvokingController {
     RuntimeService runtimeService;
 
     @RequestMapping("/start_process")
-    public String greeting() {
-
+    public String startProcess() {
 
         System.out.println("-----------------------------------------------------------");
         System.out.println("Starting synchronous transactional run of ParallelProcess");
@@ -26,6 +25,6 @@ public class ProcessInvokingController {
         System.out.println("Finishing synchronous transactional run of ParallelProcess");
         System.out.println("-----------------------------------------------------------");
 
-        return "Process started";
+        return "ParallelProcess started";
     }
 }
