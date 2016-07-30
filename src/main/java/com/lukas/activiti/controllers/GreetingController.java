@@ -1,4 +1,4 @@
-package io.fourfinanceit.activiti.controllers;
+package com.lukas.activiti.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 

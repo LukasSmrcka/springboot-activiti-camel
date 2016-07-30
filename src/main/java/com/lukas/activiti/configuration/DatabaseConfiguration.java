@@ -1,4 +1,4 @@
-package io.fourfinanceit.activiti.configuration;
+package com.lukas.activiti.configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;

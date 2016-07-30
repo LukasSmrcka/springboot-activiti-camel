@@ -27,6 +27,11 @@ spring:
      hibernate:
         ddl-auto: create-drop
 
+activemq:
+  brokerUrl: tcp://localhost:61616
+  topic:
+    notify: notify.topic
+
 
 logging:
   level:

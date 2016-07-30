@@ -13,7 +13,7 @@
   <process id="processw" name="The One Task Process" isExecutable="true">
     <startEvent id="theStart"/>
     <serviceTask id="javaService" name="Logging Activity" activiti:delegateExpression="${logActivity}"/>
-    <!--<serviceTask id="javaService" name="Logging Activity" activiti:class="io.fourfinanceit.activiti.LogActivity"/>-->
+    <!--<serviceTask id="javaService" name="Logging Activity" activiti:class="LogActivity"/>-->
     <endEvent id="theEnd"/>
     <sequenceFlow id="sid-7E7BC2D7-57CB-4286-A0E5-98F8F7036928" sourceRef="theStart" targetRef="javaService"/>
 

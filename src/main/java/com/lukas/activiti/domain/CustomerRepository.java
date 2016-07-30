@@ -1,4 +1,4 @@
-package io.fourfinanceit.activiti.domain;
+package com.lukas.activiti.domain;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;

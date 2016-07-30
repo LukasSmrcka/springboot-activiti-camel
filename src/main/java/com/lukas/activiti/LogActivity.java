@@ -1,4 +1,4 @@
-package io.fourfinanceit.activiti;
+package com.lukas.activiti;
 
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.delegate.JavaDelegate;

@@ -1,15 +1,8 @@
-package io.fourfinanceit.activiti.domain;
+package com.lukas.activiti.domain;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by Lukas on 5.6.2016.
- */
-
 @Component
-//@Scope("request")
 public class SomeDependentService {
 
     long counter;

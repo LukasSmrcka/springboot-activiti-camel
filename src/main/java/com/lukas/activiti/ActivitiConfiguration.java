@@ -1,4 +1,4 @@
-package io.fourfinanceit.activiti;
+package com.lukas.activiti;
 
 import org.activiti.bpmn.model.MessageEventDefinition;
 import org.activiti.engine.RepositoryService;
