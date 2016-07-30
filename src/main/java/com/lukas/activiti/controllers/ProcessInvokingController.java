@@ -17,13 +17,15 @@ public class ProcessInvokingController {
     @RequestMapping("/start_process")
     public String greeting() {
 
-        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        System.out.println("");
-        runtimeService.startProcessInstanceByKey("processw");
-        System.out.println("");
-        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+
+        System.out.println("-----------------------------");
+        System.out.println("Starting synchronous transactional run of ParallelProcess");
+        System.out.println("-----------------------------");
+        runtimeService.startProcessInstanceByKey("parallelProcess");
+        System.out.println("-----------------------------");
+        System.out.println("Finishing synchronous transactional run of ParallelProcess");
+        System.out.println("-----------------------------");
+
         return "Process started";
     }
 }

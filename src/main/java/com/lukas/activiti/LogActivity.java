@@ -6,19 +6,16 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("request")
+@Scope("prototype")
 public class LogActivity implements JavaDelegate {
-
-    long counter = 1;
 
     @Override
     public void execute(DelegateExecution execution) throws Exception {
+        System.out.println("-----------------------------");
         System.out.println("Logging activity Start");
-        System.out.println("LogActivity run number " + counter);
-        counter++;
-        System.out.println("Logging activity with getCurrentActivityId: " + execution.getCurrentActivityId());
-        System.out.println("Logging activity with getId: " + execution.getId());
-        System.out.println("Logging activity with getProcessInstanceId: " + execution.getProcessInstanceId());
+        System.out.println("CurrentActivityId: " + execution.getCurrentActivityId());
+        System.out.println("ProcessInstanceId: " + execution.getProcessInstanceId());
         System.out.println("Logging activity End");
+        System.out.println("-----------------------------");
     }
 }
