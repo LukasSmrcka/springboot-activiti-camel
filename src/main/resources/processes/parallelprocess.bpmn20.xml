@@ -32,8 +32,8 @@
     <serviceTask id="ProcessEnd" name="ProcessEnd" activiti:delegateExpression="${logActivity}"/>
     <sequenceFlow id="sid-0D0FB11B-CD61-4824-90EA-6422423173E7" sourceRef="ProcessEnd" targetRef="theEnd"/>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_oneTaskProcess">
-    <bpmndi:BPMNPlane bpmnElement="oneTaskProcess" id="BPMNPlane_oneTaskProcess">
+  <bpmndi:BPMNDiagram id="BPMNDiagram_parallelProcess">
+    <bpmndi:BPMNPlane bpmnElement="parallelProcess" id="BPMNPlane_parallelProcess">
       <bpmndi:BPMNShape bpmnElement="theStart" id="BPMNShape_theStart">
         <omgdc:Bounds height="30.0" width="30.0" x="245.0" y="45.0"/>
       </bpmndi:BPMNShape>
