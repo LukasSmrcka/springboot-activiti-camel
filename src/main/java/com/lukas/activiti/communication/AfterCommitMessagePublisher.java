@@ -24,13 +24,12 @@ public class AfterCommitMessagePublisher {
 
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void publishMessage(String aggregateAsString) {
-        System.out.println("---------------");
+        System.out.println("---------------------------------------");
         System.out.println("Publishing message after commit");
         System.out.println(aggregateAsString);
 
-        jmsTemplate.setDeliveryPersistent(true);
         jmsTemplate.send(new ActiveMQTopic(notifyTopicName), session -> session.createTextMessage(aggregateAsString));
 
-        System.out.println("---------------");
+        System.out.println("---------------------------------------");
     }
 }

@@ -25,7 +25,6 @@ public class PersistAndNotifyController {
     @Transactional
     public String persistAndNotify() {
 
-
         Customer customer = new Customer();
         customer.setFirstName("Bob");
         customer.setLastName("Rambo");

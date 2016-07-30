@@ -26,24 +26,7 @@ public class MassagingConfiguration {
         activeMQConnectionFactory.setBrokerURL(brokerUrl);
         activeMQConnectionFactory.setRedeliveryPolicy(topicPolicy);
 
-
         return activeMQConnectionFactory;
-    }
-
-    @Bean
-    @Scope("prototype")
-    public MessageProducer messageProducer(ConnectionFactory activeMQConnectionFactory,
-                                           @Value("${activemq.topic.notify}") String notifyTopicName) throws JMSException {
-
-
-            Connection connection = activeMQConnectionFactory.createConnection();
-            connection.start();
-            Session session = connection.createSession(true, Session.SESSION_TRANSACTED);
-
-            //add to request scope
-            Topic topic = session.createTopic(notifyTopicName);
-            MessageProducer producer = session.createProducer(topic);
-            return producer;
     }
 
     @Bean
