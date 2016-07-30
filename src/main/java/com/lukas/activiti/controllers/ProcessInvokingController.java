@@ -14,13 +14,13 @@ public class ProcessInvokingController {
     @Autowired
     RuntimeService runtimeService;
 
-    @RequestMapping("/start")
+    @RequestMapping("/start_process")
     public String greeting() {
 
         System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         System.out.println("");
-        runtimeService.startProcessInstanceByKey("camel_process");
+        runtimeService.startProcessInstanceByKey("processw");
         System.out.println("");
         System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");

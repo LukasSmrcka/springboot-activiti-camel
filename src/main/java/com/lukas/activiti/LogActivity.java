@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-//@Scope("request")
+@Scope("request")
 public class LogActivity implements JavaDelegate {
 
     long counter = 1;

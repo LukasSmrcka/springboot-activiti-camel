@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Customer {
+public class Customer extends Aggregate {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;

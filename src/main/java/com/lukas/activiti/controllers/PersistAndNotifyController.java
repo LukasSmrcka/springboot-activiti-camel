@@ -1,11 +1,10 @@
 package com.lukas.activiti.controllers;
 
 
-import com.lukas.activiti.communication.AggregateChangedEvent;
-import com.lukas.activiti.domain.CustomerRepository;
+import com.lukas.activiti.communication.EntityStatePublisher;
 import com.lukas.activiti.domain.Customer;
+import com.lukas.activiti.domain.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +19,7 @@ public class PersistAndNotifyController {
     private CustomerRepository customerRepository;
 
     @Autowired
-    ApplicationEventPublisher publisher;
+    EntityStatePublisher publisher;
 
     @RequestMapping("/persist-and-notify")
     @Transactional
@@ -32,11 +31,7 @@ public class PersistAndNotifyController {
         customer.setLastName("Rambo");
         customerRepository.save(customer);
 
-        AggregateChangedEvent event = new AggregateChangedEvent();
-        event.setAggregateId(customer.getId());
-        event.setAggregateType(Customer.class.toString());
-
-        publisher.publishEvent(event);
+        publisher.publishAfterTransactionCommit(customer);
 
         return "Persisted and notified";
     }

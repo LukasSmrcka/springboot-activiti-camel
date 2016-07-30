@@ -5,9 +5,10 @@ import org.apache.activemq.RedeliveryPolicy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.jms.core.JmsTemplate;
 
-import javax.jms.ConnectionFactory;
+import javax.jms.*;
 
 @Configuration
 public class MassagingConfiguration {
@@ -21,10 +22,28 @@ public class MassagingConfiguration {
         topicPolicy.setMaximumRedeliveries(100);
 
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
+
         activeMQConnectionFactory.setBrokerURL(brokerUrl);
         activeMQConnectionFactory.setRedeliveryPolicy(topicPolicy);
 
+
         return activeMQConnectionFactory;
+    }
+
+    @Bean
+    @Scope("prototype")
+    public MessageProducer messageProducer(ConnectionFactory activeMQConnectionFactory,
+                                           @Value("${activemq.topic.notify}") String notifyTopicName) throws JMSException {
+
+
+            Connection connection = activeMQConnectionFactory.createConnection();
+            connection.start();
+            Session session = connection.createSession(true, Session.SESSION_TRANSACTED);
+
+            //add to request scope
+            Topic topic = session.createTopic(notifyTopicName);
+            MessageProducer producer = session.createProducer(topic);
+            return producer;
     }
 
     @Bean
