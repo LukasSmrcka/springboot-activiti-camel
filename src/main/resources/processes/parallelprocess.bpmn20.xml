@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="io.fourfinanceit.activiti" xmlns:modeler="http://activiti.com/modeler" modeler:version="1.0ev" modeler:exportDateTime="20160730212902" modeler:modelId="981313" modeler:modelVersion="1" modeler:modelLastUpdated="1469910504889">
-  <message id="wakeMessage" name="wakeMessage"/>
+  <message id="downpaymentMessage" name="downpaymentReceivedMessage"/>
   <process id="parallelProcess" name="parallelProcess" isExecutable="true">
     <startEvent id="theStart"/>
     <serviceTask id="BranchWithWait" name="BranchWithWait" activiti:delegateExpression="${logActivity}"/>
@@ -14,11 +14,11 @@
     <sequenceFlow id="sid-D0782273-CEE7-4E57-9778-0D4EAB05FFFD" sourceRef="BranchWithWait" targetRef="sid-BEC0DBB6-811C-4359-B769-8D76E2780A22"/>
     <intermediateCatchEvent id="sid-D0D7C042-AA22-42F0-9C40-FB87655C742A">
       <timerEventDefinition>
-        <timeDuration>PT10S</timeDuration>
+        <timeDuration>PT50S</timeDuration>
       </timerEventDefinition>
     </intermediateCatchEvent>
     <intermediateCatchEvent id="sid-F3C51DCD-8FB6-4CE1-B4CE-CFA7C11B878A">
-      <messageEventDefinition messageRef="wakeMessage"/>
+      <messageEventDefinition messageRef="downpaymentMessage"/>
     </intermediateCatchEvent>
     <exclusiveGateway id="sid-D186C76F-D03D-4A76-BE1C-DF1FEC43358B"/>
     <sequenceFlow id="sid-1C01CB0D-DCDD-4CAD-BC55-5695FC80A4C5" sourceRef="sid-BEC0DBB6-811C-4359-B769-8D76E2780A22" targetRef="sid-D0D7C042-AA22-42F0-9C40-FB87655C742A"/>

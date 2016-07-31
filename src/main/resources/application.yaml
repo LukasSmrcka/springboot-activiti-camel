@@ -29,6 +29,7 @@ activemq:
   brokerUrl: tcp://localhost:61616
   topic:
     notify: notify.topic
+    payments: payments.topic
 
 
 logging:
