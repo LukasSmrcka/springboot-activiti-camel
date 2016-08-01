@@ -6,6 +6,8 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -20,10 +22,17 @@ public class CreateLoanApplicationHandler extends WorkflowServiceLayerCommandHan
     @Override
     public CreateLoanApplicationResponse execute(CreateLoanApplicationCommand command) {
 
+        Map<String,Object> inputParams = new HashMap<>();
+        inputParams.put("VerifyDownpayment",true);
+        inputParams.put("DownpaymentChargable",true);
+        inputParams.put("RiskAssesmentResolution","APPROVED");
+
+
         System.out.println("-----------------------------------------------------------");
         System.out.println("Starting synchronous transactional run of ParallelProcess");
         System.out.println("-----------------------------------------------------------");
-        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("parallelProcess", UUID.randomUUID().toString());
+        //ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("parallelProcess", UUID.randomUUID().toString());
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("PosLoanApplicationSimple", UUID.randomUUID().toString(),inputParams);
         String id = processInstance.getId();
         String processInstanceId = processInstance.getProcessInstanceId();
         String businessKey = processInstance.getBusinessKey();

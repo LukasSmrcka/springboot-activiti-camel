@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-@Scope("prototype")
 public class LogActivity implements JavaDelegate {
 
     @Override

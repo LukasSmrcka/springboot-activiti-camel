@@ -35,4 +35,4 @@ activemq:
 logging:
   level:
     root: INFO
-    org.apache.camel: INFO
+    org.activiti: INFO

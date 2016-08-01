@@ -3,11 +3,11 @@
   <message id="downpaymentMessage" name="downpaymentReceivedMessage"/>
   <process id="parallelProcess" name="parallelProcess" isExecutable="true">
     <startEvent id="theStart"/>
-    <serviceTask id="BranchWithWait" name="BranchWithWait" activiti:delegateExpression="${logActivity}"/>
+    <serviceTask id="BranchWithWait" name="Branch With Wait" activiti:delegateExpression="${logActivity}"/>
     <endEvent id="theEnd"/>
     <parallelGateway id="sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8"/>
     <sequenceFlow id="sid-7E7BC2D7-57CB-4286-A0E5-98F8F7036928" sourceRef="theStart" targetRef="sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8"/>
-    <serviceTask id="BranchDirect" name="BranchDirect" activiti:delegateExpression="${logActivity}"/>
+    <serviceTask id="BranchDirectActiviti" name="Branch Direct" activiti:delegateExpression="${logActivity}"/>
     <parallelGateway id="sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3"/>
     <sequenceFlow id="sid-46B832A6-B5F0-4940-AE14-0FC8E85B79F5" sourceRef="sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3" targetRef="ProcessEnd"/>
     <eventBasedGateway id="sid-BEC0DBB6-811C-4359-B769-8D76E2780A22"/>
@@ -26,8 +26,8 @@
     <sequenceFlow id="sid-C9939A3A-9C46-4097-9E78-59AD0E32C4CE" sourceRef="sid-F3C51DCD-8FB6-4CE1-B4CE-CFA7C11B878A" targetRef="sid-D186C76F-D03D-4A76-BE1C-DF1FEC43358B"/>
     <sequenceFlow id="sid-160F411B-2E41-400B-B3C6-1A2B7F3DFF45" sourceRef="sid-D0D7C042-AA22-42F0-9C40-FB87655C742A" targetRef="sid-D186C76F-D03D-4A76-BE1C-DF1FEC43358B"/>
     <sequenceFlow id="sid-8C4C918F-9BD3-4F90-9161-2E7317F464CF" sourceRef="sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8" targetRef="BranchWithWait"/>
-    <sequenceFlow id="sid-235117A6-1021-4155-BBD9-A215E3D4BD60" sourceRef="sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8" targetRef="BranchDirect"/>
-    <sequenceFlow id="sid-4403F095-5934-4E62-A32E-44A5A57A2792" sourceRef="BranchDirect" targetRef="sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3"/>
+    <sequenceFlow id="sid-235117A6-1021-4155-BBD9-A215E3D4BD60" sourceRef="sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8" targetRef="BranchDirectActiviti"/>
+    <sequenceFlow id="sid-4403F095-5934-4E62-A32E-44A5A57A2792" sourceRef="BranchDirectActiviti" targetRef="sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3"/>
     <sequenceFlow id="sid-94EC40C7-F97F-419E-9A43-FCD6BDEDE8B5" sourceRef="sid-D186C76F-D03D-4A76-BE1C-DF1FEC43358B" targetRef="sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3"/>
     <serviceTask id="ProcessEnd" name="ProcessEnd" activiti:delegateExpression="${logActivity}"/>
     <sequenceFlow id="sid-0D0FB11B-CD61-4824-90EA-6422423173E7" sourceRef="ProcessEnd" targetRef="theEnd"/>
@@ -46,7 +46,7 @@
       <bpmndi:BPMNShape bpmnElement="sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8" id="BPMNShape_sid-D440AF23-8D9A-4B63-A0BE-98E12A9DB2F8">
         <omgdc:Bounds height="40.0" width="40.0" x="240.0" y="120.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="BranchDirect" id="BPMNShape_BranchDirect">
+      <bpmndi:BPMNShape bpmnElement="BranchDirectActiviti" id="BPMNShape_BranchDirect">
         <omgdc:Bounds height="60.0" width="100.0" x="75.0" y="195.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3" id="BPMNShape_sid-076C4E2E-D0CC-4D64-8103-B1467BA4F0B3">
