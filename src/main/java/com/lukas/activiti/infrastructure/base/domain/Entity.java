@@ -1,4 +1,4 @@
-package com.lukas.activiti.base;
+package com.lukas.activiti.infrastructure.base.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package com.lukas.activiti.base;
+package com.lukas.activiti.infrastructure.base.serviceleyer;
 
 import org.activiti.engine.RuntimeService;
 

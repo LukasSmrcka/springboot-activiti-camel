@@ -14,8 +14,9 @@ public class LoanApplicationController {
     @Autowired
     CreateLoanApplicationHandler createLoanApplicationHandler;
 
+    //will be post in the future
     @RequestMapping("/loan-applications")
-    public String startProcess() {
+    public String createLoanApplication() {
 
         createLoanApplicationHandler.execute(new CreateLoanApplicationCommand());
         return "Loan application created";

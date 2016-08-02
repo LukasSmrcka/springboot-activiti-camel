@@ -1,4 +1,4 @@
-package com.lukas.activiti.communication;
+package com.lukas.activiti.infrastructure.communication;
 
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;

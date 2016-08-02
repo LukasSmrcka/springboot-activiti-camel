@@ -1,4 +1,4 @@
-package com.lukas.activiti.communication;
+package com.lukas.activiti.infrastructure.communication;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

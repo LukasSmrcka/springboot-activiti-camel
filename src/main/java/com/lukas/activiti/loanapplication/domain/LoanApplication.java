@@ -1,26 +1,11 @@
-package com.lukas.activiti.domain;
+package com.lukas.activiti.loanapplication.domain;
 
-
+import com.lukas.activiti.infrastructure.base.domain.AggregateRoot;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 
 @Entity
-public class Customer extends Aggregate {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+public class LoanApplication extends AggregateRoot {
 
     public String getFirstName() {
         return firstName;

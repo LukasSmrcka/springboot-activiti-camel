@@ -8,18 +8,15 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 @Component
-public class PaymentsListener implements MessageListener {
+public class DownpaymentsListener implements MessageListener {
     @Override
     public void onMessage(Message message) {
         TextMessage textMessage = (TextMessage) message;
 
-        System.out.println("---------------");
-        System.out.println("Message received");
         try {
-            System.out.println("Payment received: " + textMessage.getText());
+            System.out.println("Downpayment received: " + textMessage.getText());
         } catch (JMSException e) {
             e.printStackTrace();
         }
-        System.out.println("---------------");
     }
 }

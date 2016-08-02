@@ -15,7 +15,7 @@
     <eventBasedGateway id="WaitForVerifyDownpaymentInvoke"/>
     <intermediateCatchEvent id="VerifyDownpaymentAlarm" name="Verify Downpayment Alarm">
       <timerEventDefinition>
-        <timeDuration>PT15S</timeDuration>
+        <timeDuration>PT1M</timeDuration>
       </timerEventDefinition>
     </intermediateCatchEvent>
     <exclusiveGateway id="sid-D186C76F-D03D-4A76-BE1C-DF1FEC43358B"/>
@@ -33,7 +33,7 @@
     </intermediateCatchEvent>
     <intermediateCatchEvent id="ChargeDownpaymentAlarm" name="Charge Downpayment Alarm">
       <timerEventDefinition>
-        <timeDuration>PT15S</timeDuration>
+        <timeDuration>PT1M</timeDuration>
       </timerEventDefinition>
     </intermediateCatchEvent>
     <sequenceFlow id="sid-F6F69DDA-DB15-440F-BD96-6BBB7A01B7C9" sourceRef="WaitForDownpayment" targetRef="DownpaymentReceived"/>
